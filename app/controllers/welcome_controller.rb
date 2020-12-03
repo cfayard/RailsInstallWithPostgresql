@@ -4,9 +4,11 @@ class WelcomeController < ApplicationController
     some_value = true
     
     if some_value
-      
+      flash[:success] = 'Page redirect was successful!'
+
     else
-      redirect_to welcome_features_path
+      flash[:success] = 'Page redirect was successful!'
+      redirect_to(welcome_features_path)
     end
   end
 
