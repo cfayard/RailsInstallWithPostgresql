@@ -13,6 +13,8 @@
     <% if flash[:success] %>
     <div><%= flash[:success] %></div>
     <% end %>
+
     <%= yield %>
+    <%= @name if @name.present? %>
   </body>
 </html>

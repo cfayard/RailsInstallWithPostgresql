@@ -1,4 +1,5 @@
 class WelcomeController < ApplicationController
+  before_action :set_values, except: [:home]
 
   def home
     some_value = true
@@ -7,7 +8,7 @@ class WelcomeController < ApplicationController
       flash[:success] = 'Page redirect was successful!'
 
     else
-      flash[:success] = 'Page redirect was successful!'
+      flash[:success] = 'Redirect Users to the features page...'
       redirect_to(welcome_features_path)
     end
   end
@@ -20,4 +21,12 @@ class WelcomeController < ApplicationController
 
   def contact
   end
+
+  private
+  
+  def set_values
+    # gets called before any action in this controller
+    @name = "David"
+  end
+
 end
