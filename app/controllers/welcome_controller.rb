@@ -1,14 +1,13 @@
 class WelcomeController < ApplicationController
-  def home
-    some_value = false
 
-    if some_value === true
-      @message = "Welcome to my homepage!"
-    else
-      @message = "Hope you are having a great day!"
-    end
+  def home
+    some_value = true
     
-    Rails.logger.debug "Message: #{ @message }"
+    if some_value
+      
+    else
+      redirect_to welcome_features_path
+    end
   end
 
   def features
