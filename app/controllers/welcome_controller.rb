@@ -7,6 +7,8 @@ class WelcomeController < ApplicationController
     else
       @message = "Hope you are having a great day!"
     end
+    
+    Rails.logger.debug "Message: #{ @message }"
   end
 
   def features
